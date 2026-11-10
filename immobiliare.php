@@ -3,7 +3,7 @@
  * Plugin Name: Immobiliare
  * Plugin URI: https://www.matteotestoni.it/servizi/programmatore-esperto-wordpress/plugin-immobiliare-wordpress/
  * Description: Gestionale immobiliare per WordPress. Gestisci i tuoi immobili in modo semplice e veloce.
- * Version: 7.1.0
+ * Version: 7.2.0
  * Author: Matteo Testoni
  * Author URI: https://www.matteotestoni.it
  * License: GPL2
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'Immobiliare_Version', '7.1.0' );
+define( 'Immobiliare_Version', '7.2.0' );
 define( 'Immobiliare_Directory', dirname( plugin_basename( __FILE__ ) ) );
 define( 'Immobiliare_Path', plugin_dir_path( __FILE__ ) );
 define( 'Immobiliare_URL', plugin_dir_url( __FILE__ ) );
@@ -470,25 +470,43 @@ function immobili_aggiungiattributialcontenutoscheda( $content ) {
 
 		$immobile_mappa = '';
 		$map_key        = get_option( 'immobiliare_google_api_key' );
+		$loc            = rwmb_meta( 'immobili_loc' );
 		if ( ! empty( $map_key ) ) {
 			$args = array(
 				'js_options'   => array(
-					'mapTypeId'   => 'HYBRID',
-					'zoomControl' => true,
+					'mapTypeId'         => 'ROADMAP',
+					'zoomControl'       => true,
+					'mapTypeControl'    => true,
+					'scaleControl'      => true,
+					'streetViewControl' => true,
+					'rotateControl'     => true,
+					'fullscreenControl' => true,
+					'gestureHandling'   => 'cooperative',
 				),
-				'type'         => 'HYBRID',
+				'type'         => 'ROADMAP',
 				'width'        => '100%',
-				'height'       => '400px',
+				'height'       => '450px',
 				'zoom'         => 15,
 				'marker'       => true,
 				'language'     => 'it',
-				'marker_title' => 'immobile',
+				'region'       => 'IT',
+				'marker_title' => get_the_title(),
 				'info_window'  => rwmb_meta( 'immobili_address' ),
 				'api_key'      => $map_key,
 			);
 			$rendered_map = rwmb_meta( 'immobili_loc', $args );
 			if ( ! empty( $rendered_map ) ) {
-				$immobile_mappa = '<h2>' . esc_html__( 'Mappa', 'immobiliare' ) . '</h2>' . $rendered_map;
+				$immobile_mappa = '<div class="immobili-box immobili-mappa"><h2>' . esc_html__( 'Mappa', 'immobiliare' ) . '</h2>' . $rendered_map . '</div>';
+			}
+		} elseif ( ! empty( $loc ) ) {
+			// Fallback su mappa OpenStreetMap se la chiave Google Maps non è configurata
+			$coords = is_array( $loc ) ? implode( ',', $loc ) : $loc;
+			$parts  = explode( ',', $coords );
+			if ( count( $parts ) >= 2 ) {
+				$lat     = trim( $parts[0] );
+				$lng     = trim( $parts[1] );
+				$osm_url = 'https://www.openstreetmap.org/export/embed.html?bbox=' . ( (float) $lng - 0.005 ) . '%2C' . ( (float) $lat - 0.005 ) . '%2C' . ( (float) $lng + 0.005 ) . '%2C' . ( (float) $lat + 0.005 ) . '&amp;layer=mapnik&amp;marker=' . $lat . '%2C' . $lng;
+				$immobile_mappa = '<div class="immobili-box immobili-mappa"><h2>' . esc_html__( 'Mappa', 'immobiliare' ) . '</h2><iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="' . esc_url( $osm_url ) . '" style="border: 1px solid #e2e8f0; border-radius: 8px;"></iframe></div>';
 			}
 		}
 
@@ -652,3 +670,83 @@ function immobili_add_meta_to_search( $query ) {
 	return $query;
 }
 add_action( 'pre_get_posts', 'immobili_add_meta_to_search' );
+
+/**
+ * Aggiunge la colonna Immagine in evidenza nell'elenco immobili in admin di WordPress
+ * Inserisce la colonna 'immobili_thumb' come prima colonna visibile
+ */
+function immobiliare_immobili_columns( $columns ) {
+	$new_columns = array();
+
+	// Preserva il checkbox di selezione multipla (cb) se presente
+	if ( isset( $columns['cb'] ) ) {
+		$new_columns['cb'] = $columns['cb'];
+		unset( $columns['cb'] );
+	}
+
+	// Inserisce la colonna Foto subito come prima colonna di contenuto
+	$new_columns['immobili_thumb'] = __( 'Foto', 'immobiliare' );
+
+	foreach ( $columns as $key => $title ) {
+		$new_columns[ $key ] = $title;
+	}
+
+	return $new_columns;
+}
+add_filter( 'manage_immobili_posts_columns', 'immobiliare_immobili_columns' );
+add_filter( 'manage_edit-immobili_columns', 'immobiliare_immobili_columns' );
+
+/**
+ * Renderizza il contenuto della colonna Immagine in evidenza nell'admin
+ */
+function immobiliare_immobili_custom_column( $column, $post_id ) {
+	if ( 'immobili_thumb' === $column ) {
+		if ( has_post_thumbnail( $post_id ) ) {
+			$thumb = get_the_post_thumbnail(
+				$post_id,
+				array( 55, 55 ),
+				array(
+					'style' => 'width: 55px; height: 55px; object-fit: cover; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); display: block;',
+					'alt'   => esc_attr( get_the_title( $post_id ) ),
+				)
+			);
+			$edit_link = get_edit_post_link( $post_id );
+			if ( $edit_link ) {
+				echo '<a href="' . esc_url( $edit_link ) . '" style="display:inline-block;" title="' . esc_attr__( 'Modifica Immobile', 'immobiliare' ) . '">' . $thumb . '</a>';
+			} else {
+				echo $thumb;
+			}
+		} else {
+			echo '<span style="display: inline-block; width: 55px; height: 55px; line-height: 55px; text-align: center; background: #f0f0f1; color: #8c8f94; font-size: 11px; border-radius: 6px; border: 1px dashed #c3c4c7;">' . esc_html__( 'No foto', 'immobiliare' ) . '</span>';
+		}
+	}
+}
+add_action( 'manage_immobili_posts_custom_column', 'immobiliare_immobili_custom_column', 10, 2 );
+
+/**
+ * Stile per la colonna anteprima foto nell'amministrazione di WordPress
+ */
+function immobiliare_admin_columns_style() {
+	$screen = get_current_screen();
+	if ( $screen && 'immobili' === $screen->post_type ) {
+		echo '<style>
+			.column-immobili_thumb { width: 75px !important; text-align: center; vertical-align: middle !important; }
+			.column-immobili_thumb a img { transition: transform 0.15s ease-in-out; }
+			.column-immobili_thumb a:hover img { transform: scale(1.08); }
+		</style>';
+	}
+}
+add_action( 'admin_head', 'immobiliare_admin_columns_style' );
+
+/**
+ * Caricamento moderno script Google Maps con attributi async e defer
+ */
+function immobiliare_async_google_maps_script( $tag, $handle, $src ) {
+	if ( false !== strpos( $src, 'maps.googleapis.com/maps/api/js' ) || false !== strpos( $handle, 'google-maps' ) ) {
+		if ( false === strpos( $tag, 'async' ) ) {
+			$tag = str_replace( ' src=', ' async defer src=', $tag );
+		}
+	}
+	return $tag;
+}
+add_filter( 'script_loader_tag', 'immobiliare_async_google_maps_script', 10, 3 );

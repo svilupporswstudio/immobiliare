@@ -6,7 +6,7 @@ Requires at least: 7.1
 Tested up to: 7.1
 Requires PHP: 8.3
 Requires Plugins: meta-box
-Stable tag: 7.1
+Stable tag: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,12 @@ A partire da WordPress 6.5, il plugin sfrutta la funzionalità nativa "Plugin De
 2. screenshot-2.jpg
 
 == Changelog ==
+
+= 7.2.0 =
+* Aggiunta colonna con l'anteprima dell'immagine in evidenza (Foto) come prima colonna nell'elenco immobili in bacheca WordPress (admin), con link diretto alla modifica e badge di fallback.
+* Verifica e armonizzazione completa dell'internazionalizzazione: 100% delle funzioni di traduzione (__ , _e, esc_html__, esc_attr__, _x) utilizzano il text domain 'immobiliare'.
+* Protezione dell'accesso diretto ai file: inserito blocco 'defined( 'ABSPATH' ) || exit;' in tutti i file PHP e file sentinella 'index.php' nella radice e in tutte le sottocartelle (css/, img/, lang/).
+* Modernizzazione dell'integrazione Google Maps: aggiornate le opzioni JavaScript della mappa (gestureHandling, controlli avanzati, caricamento con attributi async/defer) e integrato fallback nativo OpenStreetMap in assenza di API key Google.
 
 = 7.1.0 =
 * Aggiunto supporto nativo a WordPress 6.5+ Plugin Dependencies (`Requires Plugins: meta-box`).

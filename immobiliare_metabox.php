@@ -30,23 +30,23 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 			// TEXT
 			array(
 				'type' => 'heading',
-				'name' => __( 'Dati dell\'immobile', 'meta-box' ),
+				'name' => __( 'Dati dell\'immobile', 'immobiliare' ),
 				'id'   => 'datiheading'
 			),
 			array(
-				'name' => __( 'Vista mare/Vicinanza mare', 'meta-box' ),
+				'name' => __( 'Vista mare/Vicinanza mare', 'immobiliare' ),
 				'id'   => "{$prefix}vistamare",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name' => __( 'No condominio', 'meta-box' ),
+				'name' => __( 'No condominio', 'immobiliare' ),
 				'id'   => "{$prefix}nocondominio",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name'  => __( 'Rif', 'meta-box' ),
+				'name'  => __( 'Rif', 'immobiliare' ),
 				'id'    => "{$prefix}rif",
 				'type'  => 'text',
 				'clone' => false,
@@ -54,7 +54,7 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => 1
 			),
 				array(
-				'name'  => __( 'Tipo immobile', 'meta-box' ),
+				'name'  => __( 'Tipo immobile', 'immobiliare' ),
 				'id'    => "{$prefix}tipo",
 				'type'  => 'text',
 				'clone' => false,
@@ -63,25 +63,25 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Stanze', 'meta-box' ),
+				'name' => __( 'Stanze', 'immobiliare' ),
 				'desc' => __( 'Scegli di quali stanze è composto l\'immobile, se arredato e i metri quadrati', 'immobiliare' ),
 				'id'   => 'stanzeheading'
 			),
 			array(
-				'name'     => __( 'Arredato', 'meta-box' ),
+				'name'     => __( 'Arredato', 'immobiliare' ),
 				'id'       => "{$prefix}arredato",
 				'type'     => 'select',
 				'options'  => array(
-					'si' => __( 'si', 'meta-box' ),
-					'non arredato' => __( 'non arredato', 'meta-box' ),
-					'parzialmente arredato' => __( 'parzialmente arredato', 'meta-box' ),
+					'si' => __( 'si', 'immobiliare' ),
+					'non arredato' => __( 'non arredato', 'immobiliare' ),
+					'parzialmente arredato' => __( 'parzialmente arredato', 'immobiliare' ),
 				),
 				'multiple'    => false,
 				'std'         => '-',
-				'placeholder' => __( 'Arredato?', 'meta-box' )
+				'placeholder' => __( 'Arredato?', 'immobiliare' )
 			),
 			array(
-				'name'  => __( 'mq', 'meta-box' ),
+				'name'  => __( 'mq', 'immobiliare' ),
 				'id'    => "{$prefix}mq",
 				'type'  => 'number',
 				'std'  => 0,
@@ -90,7 +90,7 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => 1
 			),
 			array(
-				'name'  => __( 'Locali', 'meta-box' ),
+				'name'  => __( 'Locali', 'immobiliare' ),
 				'id'    => "{$prefix}locali",
 				'type'  => 'number',
 				'std'   => 2,
@@ -99,7 +99,7 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => 1
 			),
 			array(
-				'name'  => __( 'Ingresso', 'meta-box' ),
+				'name'  => __( 'Ingresso', 'immobiliare' ),
 				'id'    => "{$prefix}ingresso",
 				'type'  => 'text',
 				'std'  => 0,
@@ -108,68 +108,68 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => 1
 			),
 			array(
-				'name'     => __( 'Soggiorno', 'meta-box' ),
+				'name'     => __( 'Soggiorno', 'immobiliare' ),
 				'id'       => "{$prefix}soggiorno",
 				'type'     => 'select',
 				'options'  => array(
-					'si' => __( 'si', 'meta-box' ),
-					'no' => __( 'no', 'meta-box' ),
-					'doppio' => __( 'doppio', 'meta-box' ),
+					'si' => __( 'si', 'immobiliare' ),
+					'no' => __( 'no', 'immobiliare' ),
+					'doppio' => __( 'doppio', 'immobiliare' ),
 				),
 				'multiple'    => false,
 				'std'         => 'abitabile',
-				'placeholder' => __( 'Seleziona il soggiorno/salone', 'meta-box' )
+				'placeholder' => __( 'Seleziona il soggiorno/salone', 'immobiliare' )
 			),
 			array(
-				'name'     => __( 'Cucina', 'meta-box' ),
+				'name'     => __( 'Cucina', 'immobiliare' ),
 				'id'       => "{$prefix}cucina",
 				'type'     => 'select',
 				'options'  => array(
-					'abitabile' => __( 'abitabile', 'meta-box' ),
-					'a vista' => __( 'a vista', 'meta-box' ),
-					'angolo cottura' => __( 'angolo cottura', 'meta-box' ),
-					'cucinotto' => __( 'cucinotto', 'meta-box' ),
-					'semiabitabile' => __( 'semiabitabile', 'meta-box' ),
+					'abitabile' => __( 'abitabile', 'immobiliare' ),
+					'a vista' => __( 'a vista', 'immobiliare' ),
+					'angolo cottura' => __( 'angolo cottura', 'immobiliare' ),
+					'cucinotto' => __( 'cucinotto', 'immobiliare' ),
+					'semiabitabile' => __( 'semiabitabile', 'immobiliare' ),
 				),
 				'multiple'    => false,
 				'std'         => 'abitabile',
-				'placeholder' => __( 'Seleziona la cucina', 'meta-box' )
+				'placeholder' => __( 'Seleziona la cucina', 'immobiliare' )
 			),
 			array(
-				'name'     => __( 'Balcone', 'meta-box' ),
+				'name'     => __( 'Balcone', 'immobiliare' ),
 				'id'       => "{$prefix}balcone",
 				'type'     => 'select',
 				'options'  => array(
-					'-' => __( '-', 'meta-box' ),
-					'1' => __( '1', 'meta-box' ),
-					'2' => __( '2', 'meta-box' ),
-					'3' => __( '3', 'meta-box' ),
-					'4' => __( '4', 'meta-box' ),
-					'5' => __( '5', 'meta-box' ),
+					'-' => __( '-', 'immobiliare' ),
+					'1' => __( '1', 'immobiliare' ),
+					'2' => __( '2', 'immobiliare' ),
+					'3' => __( '3', 'immobiliare' ),
+					'4' => __( '4', 'immobiliare' ),
+					'5' => __( '5', 'immobiliare' ),
 				),
 				'multiple'    => false,
 				'std'         => '-',
-				'placeholder' => __( 'Seleziona il balcone', 'meta-box' )
+				'placeholder' => __( 'Seleziona il balcone', 'immobiliare' )
 			),
 			array(
-				'name'     => __( 'Terrazzo', 'meta-box' ),
+				'name'     => __( 'Terrazzo', 'immobiliare' ),
 				'id'       => "{$prefix}terrazzo",
 				'type'     => 'select',
 				'options'  => array(
-					'-' => __( '-', 'meta-box' ),
-					'1' => __( '1', 'meta-box' ),
-					'2' => __( '2', 'meta-box' ),
-					'3' => __( '3', 'meta-box' ),
-					'4' => __( '4', 'meta-box' ),
-					'5' => __( '5', 'meta-box' ),
+					'-' => __( '-', 'immobiliare' ),
+					'1' => __( '1', 'immobiliare' ),
+					'2' => __( '2', 'immobiliare' ),
+					'3' => __( '3', 'immobiliare' ),
+					'4' => __( '4', 'immobiliare' ),
+					'5' => __( '5', 'immobiliare' ),
 				),
 				'multiple'    => false,
 				'std'         => '-',
-				'placeholder' => __( 'Seleziona il terrazzo', 'meta-box' )
+				'placeholder' => __( 'Seleziona il terrazzo', 'immobiliare' )
 			),
 			array(
 				
-				'name'  => __( 'Bagni', 'meta-box' ),
+				'name'  => __( 'Bagni', 'immobiliare' ),
 				'id'    => "{$prefix}bagni",
 				'type'  => 'number',
 				'std'  => 2,
@@ -179,7 +179,7 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 			),
 			array(
 				
-				'name'  => __( 'Camere da letto', 'meta-box' ),
+				'name'  => __( 'Camere da letto', 'immobiliare' ),
 				'id'    => "{$prefix}cameredaletto",
 				'type'  => 'number',
 				'std'  => 0,
@@ -188,19 +188,19 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => 1
 			),
 			array(
-				'name' => __( 'Cantina', 'meta-box' ),
+				'name' => __( 'Cantina', 'immobiliare' ),
 				'id'   => "{$prefix}cantina",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name' => __( 'Solaio', 'meta-box' ),
+				'name' => __( 'Solaio', 'immobiliare' ),
 				'id'   => "{$prefix}solaio",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name' => __( 'Portico', 'meta-box' ),
+				'name' => __( 'Portico', 'immobiliare' ),
 				'id'   => "{$prefix}portico",
 				'type' => 'checkbox',
 				'std'  => 0
@@ -208,76 +208,76 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 
 			array(
 				'type' => 'heading',
-				'name' => __( 'Comfort / caratteristiche', 'meta-box' ),
-				'desc' => __( 'Scegli le caratteristiche peculiari e di pregio dell\'immobile', '{$prefix}' ),
+				'name' => __( 'Comfort / caratteristiche', 'immobiliare' ),
+				'desc' => __( 'Scegli le caratteristiche peculiari e di pregio dell\'immobile', 'immobiliare' ),
 				'id'   => 'stanzeheading'
 			),
 			array(
-				'name' => __( 'Piscina', 'meta-box' ),
+				'name' => __( 'Piscina', 'immobiliare' ),
 				'id'   => "{$prefix}piscina",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name' => __( 'Idromassaggio', 'meta-box' ),
+				'name' => __( 'Idromassaggio', 'immobiliare' ),
 				'id'   => "{$prefix}idromassaggio",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name' => __( 'Ascensore', 'meta-box' ),
+				'name' => __( 'Ascensore', 'immobiliare' ),
 				'id'   => "{$prefix}ascensore",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name' => __( 'Condizionatore', 'meta-box' ),
+				'name' => __( 'Condizionatore', 'immobiliare' ),
 				'id'   => "{$prefix}condizionatore",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name' => __( 'Satellite', 'meta-box' ),
+				'name' => __( 'Satellite', 'immobiliare' ),
 				'id'   => "{$prefix}satellite",
 				'type' => 'checkbox',
 				'std'  => 0
 			),
 			array(
-				'name'     => __( 'Giardino', 'meta-box' ),
+				'name'     => __( 'Giardino', 'immobiliare' ),
 				'id'       => "{$prefix}giardino",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'di proprietà' => __( 'di proprietà', 'meta-box' ),
-					'uso esclusivo' => __( 'uso esclusivo', 'meta-box' ),
-					'condominiale' => __( 'condominiale', 'meta-box' ),
-					'cortile privato' => __( 'cortile privato', 'meta-box' ),
-					'cortile comune' => __( 'cortile comune', 'meta-box' ),
-					'-' => __( '-', 'meta-box' ),
+					'di proprietà' => __( 'di proprietà', 'immobiliare' ),
+					'uso esclusivo' => __( 'uso esclusivo', 'immobiliare' ),
+					'condominiale' => __( 'condominiale', 'immobiliare' ),
+					'cortile privato' => __( 'cortile privato', 'immobiliare' ),
+					'cortile comune' => __( 'cortile comune', 'immobiliare' ),
+					'-' => __( '-', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => '-',
-				'placeholder' => __( 'Seleziona il giardino', 'meta-box' )
+				'placeholder' => __( 'Seleziona il giardino', 'immobiliare' )
 			),
 			array(
 				
-				'name'  => __( 'mq giardino', 'meta-box' ),
+				'name'  => __( 'mq giardino', 'immobiliare' ),
 				'id'    => "{$prefix}mqgiardino",
 				'type'  => 'number',
-				'std'   => __( '', 'meta-box' ),
+				'std'   => __( '', 'immobiliare' ),
 				'clone' => false,
 				'min'  => 0,
 				'step' => 1
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Valore', 'meta-box' ),
-				'desc' => __( 'Prezzo, prezzo precedente, se ha subito un ribasso, spese condominiali, categoria e rendita catastale', '{$prefix}' ),
+				'name' => __( 'Valore', 'immobiliare' ),
+				'desc' => __( 'Prezzo, prezzo precedente, se ha subito un ribasso, spese condominiali, categoria e rendita catastale', 'immobiliare' ),
 				'id'   => 'valoreheading'
 			),
 			array(
-				'name'  => __( 'Didascalia prezzo', 'meta-box' ),
+				'name'  => __( 'Didascalia prezzo', 'immobiliare' ),
 				'id'    => "{$prefix}didascalia_prezzo",
 				'type'  => 'text',
 				'std'  => 0,
@@ -287,8 +287,8 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 			),
 			array(
 				
-				'name'  => __( 'Prezzo precedente', 'meta-box' ),
-				'placeholder'  => __( 'Prezzo precedente', 'meta-box' ),
+				'name'  => __( 'Prezzo precedente', 'immobiliare' ),
+				'placeholder'  => __( 'Prezzo precedente', 'immobiliare' ),
 				'id'    => "{$prefix}prezzo-precedente",
 				'type'  => 'number',
 				'clone' => false,
@@ -297,77 +297,77 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'std' => 0
 			),
 			array(
-				'name'  => __( 'Prezzo', 'meta-box' ),
-				'placeholder'  => __( 'Prezzo', 'meta-box' ),
+				'name'  => __( 'Prezzo', 'immobiliare' ),
+				'placeholder'  => __( 'Prezzo', 'immobiliare' ),
 				'id'    => "{$prefix}prezzo",
 				'type'  => 'number',
 				'std'  => 0,
 				'clone' => false
 			),
 			array(
-				'name'     => __( 'Categoria Catastale', 'meta-box' ),
+				'name'     => __( 'Categoria Catastale', 'immobiliare' ),
 				'id'       => "{$prefix}categoriacatastale",
 				'type'     => 'select',
 				'options'  => array(
-					'A/1' => __( 'A/1', 'meta-box' ),
-					'A/2' => __( 'A/2', 'meta-box' ),
-					'A/3' => __( 'A/3', 'meta-box' ),
-					'A/4' => __( 'A/4', 'meta-box' ),
-					'A/5' => __( 'A/5', 'meta-box' ),
-					'A/6' => __( 'A/6', 'meta-box' ),
-					'A/7' => __( 'A/7', 'meta-box' ),
-					'A/8' => __( 'A/8', 'meta-box' ),
-					'A/9' => __( 'A/9', 'meta-box' ),
-					'A/10' => __( 'A/10', 'meta-box' ),
-					'A/11' => __( 'A/11', 'meta-box' ),
-					'B/1' => __( 'B/1', 'meta-box' ),
-					'B/2' => __( 'B/2', 'meta-box' ),
-					'B/3' => __( 'B/3', 'meta-box' ),
-					'B/4' => __( 'B/4', 'meta-box' ),
-					'B/5' => __( 'B/5', 'meta-box' ),
-					'B/6' => __( 'B/6', 'meta-box' ),
-					'B/7' => __( 'B/7', 'meta-box' ),
-					'B/8' => __( 'B/8', 'meta-box' ),
-					'C/1' => __( 'C/1', 'meta-box' ),
-					'C/2' => __( 'C/2', 'meta-box' ),
-					'C/3' => __( 'C/3', 'meta-box' ),
-					'C/4' => __( 'C/4', 'meta-box' ),
-					'C/5' => __( 'C/5', 'meta-box' ),
-					'C/6' => __( 'C/6', 'meta-box' ),
-					'C/7' => __( 'C/7', 'meta-box' ),
-					'D/1' => __( 'D/1', 'meta-box' ),
-					'D/2' => __( 'D/2', 'meta-box' ),
-					'D/3' => __( 'D/3', 'meta-box' ),
-					'D/4' => __( 'D/4', 'meta-box' ),
-					'D/5' => __( 'D/5', 'meta-box' ),
-					'D/6' => __( 'D/6', 'meta-box' ),
-					'D/7' => __( 'D/7', 'meta-box' ),
-					'D/8' => __( 'D/8', 'meta-box' ),
-					'D/9' => __( 'D/9', 'meta-box' ),
-					'D/10' => __( 'D/10', 'meta-box' ),
-					'E/1' => __( 'E/1', 'meta-box' ),
-					'E/2' => __( 'E/2', 'meta-box' ),
-					'E/3' => __( 'E/3', 'meta-box' ),
-					'E/4' => __( 'E/4', 'meta-box' ),
-					'E/5' => __( 'E/5', 'meta-box' ),
-					'E/6' => __( 'E/6', 'meta-box' ),
-					'E/7' => __( 'E/7', 'meta-box' ),
-					'E/8' => __( 'E/8', 'meta-box' ),
-					'E/9' => __( 'E/9', 'meta-box' ),
-					'F/1' => __( 'F/1', 'meta-box' ),
-					'F/2' => __( 'F/2', 'meta-box' ),
-					'F/3' => __( 'F/3', 'meta-box' ),
-					'F/4' => __( 'F/4', 'meta-box' ),
-					'F/5' => __( 'F/5', 'meta-box' ),
-					'F/6' => __( 'F/6', 'meta-box' ),
-					'F/7' => __( 'F/7', 'meta-box' ),
+					'A/1' => __( 'A/1', 'immobiliare' ),
+					'A/2' => __( 'A/2', 'immobiliare' ),
+					'A/3' => __( 'A/3', 'immobiliare' ),
+					'A/4' => __( 'A/4', 'immobiliare' ),
+					'A/5' => __( 'A/5', 'immobiliare' ),
+					'A/6' => __( 'A/6', 'immobiliare' ),
+					'A/7' => __( 'A/7', 'immobiliare' ),
+					'A/8' => __( 'A/8', 'immobiliare' ),
+					'A/9' => __( 'A/9', 'immobiliare' ),
+					'A/10' => __( 'A/10', 'immobiliare' ),
+					'A/11' => __( 'A/11', 'immobiliare' ),
+					'B/1' => __( 'B/1', 'immobiliare' ),
+					'B/2' => __( 'B/2', 'immobiliare' ),
+					'B/3' => __( 'B/3', 'immobiliare' ),
+					'B/4' => __( 'B/4', 'immobiliare' ),
+					'B/5' => __( 'B/5', 'immobiliare' ),
+					'B/6' => __( 'B/6', 'immobiliare' ),
+					'B/7' => __( 'B/7', 'immobiliare' ),
+					'B/8' => __( 'B/8', 'immobiliare' ),
+					'C/1' => __( 'C/1', 'immobiliare' ),
+					'C/2' => __( 'C/2', 'immobiliare' ),
+					'C/3' => __( 'C/3', 'immobiliare' ),
+					'C/4' => __( 'C/4', 'immobiliare' ),
+					'C/5' => __( 'C/5', 'immobiliare' ),
+					'C/6' => __( 'C/6', 'immobiliare' ),
+					'C/7' => __( 'C/7', 'immobiliare' ),
+					'D/1' => __( 'D/1', 'immobiliare' ),
+					'D/2' => __( 'D/2', 'immobiliare' ),
+					'D/3' => __( 'D/3', 'immobiliare' ),
+					'D/4' => __( 'D/4', 'immobiliare' ),
+					'D/5' => __( 'D/5', 'immobiliare' ),
+					'D/6' => __( 'D/6', 'immobiliare' ),
+					'D/7' => __( 'D/7', 'immobiliare' ),
+					'D/8' => __( 'D/8', 'immobiliare' ),
+					'D/9' => __( 'D/9', 'immobiliare' ),
+					'D/10' => __( 'D/10', 'immobiliare' ),
+					'E/1' => __( 'E/1', 'immobiliare' ),
+					'E/2' => __( 'E/2', 'immobiliare' ),
+					'E/3' => __( 'E/3', 'immobiliare' ),
+					'E/4' => __( 'E/4', 'immobiliare' ),
+					'E/5' => __( 'E/5', 'immobiliare' ),
+					'E/6' => __( 'E/6', 'immobiliare' ),
+					'E/7' => __( 'E/7', 'immobiliare' ),
+					'E/8' => __( 'E/8', 'immobiliare' ),
+					'E/9' => __( 'E/9', 'immobiliare' ),
+					'F/1' => __( 'F/1', 'immobiliare' ),
+					'F/2' => __( 'F/2', 'immobiliare' ),
+					'F/3' => __( 'F/3', 'immobiliare' ),
+					'F/4' => __( 'F/4', 'immobiliare' ),
+					'F/5' => __( 'F/5', 'immobiliare' ),
+					'F/6' => __( 'F/6', 'immobiliare' ),
+					'F/7' => __( 'F/7', 'immobiliare' ),
 				),
 				'multiple'    => false,
 				'std'         => '-',
-				'placeholder' => __( 'Categoria catastale?', 'meta-box' )
+				'placeholder' => __( 'Categoria catastale?', 'immobiliare' )
 			),
 			array(
-				'name'  => __( 'Rendita catastale', 'meta-box' ),
+				'name'  => __( 'Rendita catastale', 'immobiliare' ),
 				'id'    => "{$prefix}renditacatastale",
 				'type'  => 'number',
 				'clone' => false,
@@ -375,117 +375,117 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => .01
 			),
  			array(				
-				'name'  => __( 'Spese condominiali', 'meta-box' ),
-				'placeholder'  => __( 'Spese condominiali', 'meta-box' ),
+				'name'  => __( 'Spese condominiali', 'immobiliare' ),
+				'placeholder'  => __( 'Spese condominiali', 'immobiliare' ),
 				'id'    => "{$prefix}spese",
 				'type'  => 'number',
 				'std'  => 0,
 				'clone' => false
 			),
 			array(
-				'name'     => __( 'Tipo spese', 'meta-box' ),
+				'name'     => __( 'Tipo spese', 'immobiliare' ),
 				'id'       => "{$prefix}spesetipo",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'mensili' => __( 'mensili', 'meta-box' ),
-					'annuali' => __( 'annuali', 'meta-box' ),
-					'nessuna' => __( 'nessuna', 'meta-box' ),
+					'mensili' => __( 'mensili', 'immobiliare' ),
+					'annuali' => __( 'annuali', 'immobiliare' ),
+					'nessuna' => __( 'nessuna', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'mensili',
-				'placeholder' => __( 'Seleziona il tipo di spese', 'meta-box' )
+				'placeholder' => __( 'Seleziona il tipo di spese', 'immobiliare' )
 			),
 
 
 			array(
 				'type' => 'heading',
-				'name' => __( 'Parcheggi', 'meta-box' ),
-				'desc' => __( 'Posti auto, moto e bici, se interni, esterni o privati', '{$prefix}' ),
+				'name' => __( 'Parcheggi', 'immobiliare' ),
+				'desc' => __( 'Posti auto, moto e bici, se interni, esterni o privati', 'immobiliare' ),
 				'id'   => 'parcheggiheading'
 			),
 			array(
-				'name'     => __( 'Posto cicli,motocicli', 'meta-box' ),
+				'name'     => __( 'Posto cicli,motocicli', 'immobiliare' ),
 				'id'       => "{$prefix}postomotocicli",
 				'type'     => 'select',
 				'options'  => array(
-					'-' => __( '-', 'meta-box' ),
-					'interno' => __( 'interno', 'meta-box' ),
-					'esterno' => __( 'esterno', 'meta-box' ),
-					'privato' => __( 'privato', 'meta-box' ),
+					'-' => __( '-', 'immobiliare' ),
+					'interno' => __( 'interno', 'immobiliare' ),
+					'esterno' => __( 'esterno', 'immobiliare' ),
+					'privato' => __( 'privato', 'immobiliare' ),
 					
 					
 				),
 				'multiple'    => false,
 				'std'         => 'esterno',
-				'placeholder' => __( 'Seleziona il posto cicli motocicli', 'meta-box' )
+				'placeholder' => __( 'Seleziona il posto cicli motocicli', 'immobiliare' )
 			),
 			array(
-				'name'     => __( 'Posto auto', 'meta-box' ),
+				'name'     => __( 'Posto auto', 'immobiliare' ),
 				'id'       => "{$prefix}postoauto",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'-' => __( '-', 'meta-box' ),
-					'privato' => __( 'privato', 'meta-box' ),
-					'box singolo' => __( 'box singolo', 'meta-box' ),
-					'box doppio' => __( 'box doppio', 'meta-box' ),
-					'box triplo' => __( 'box triplo', 'meta-box' ),
-					'box quadruplo' => __( 'box quadruplo', 'meta-box' ),
-					'posto auto coperto' => __( 'posto auto coperto', 'meta-box' ),
-					'posto auto scoperto' => __( 'posto auto scoperto', 'meta-box' ),
-					'posto auto condominiale' => __( 'posto auto condominiale', 'meta-box' ),
-					'facilità di parcheggio' => __( 'facilità di parcheggio', 'meta-box' ),
-					'posto interno' => __( 'posto interno', 'meta-box' ),
-					'posto assegnato' => __( 'posto assegnato', 'meta-box' ),
-					'garage' => __( 'garage', 'meta-box' ),
+					'-' => __( '-', 'immobiliare' ),
+					'privato' => __( 'privato', 'immobiliare' ),
+					'box singolo' => __( 'box singolo', 'immobiliare' ),
+					'box doppio' => __( 'box doppio', 'immobiliare' ),
+					'box triplo' => __( 'box triplo', 'immobiliare' ),
+					'box quadruplo' => __( 'box quadruplo', 'immobiliare' ),
+					'posto auto coperto' => __( 'posto auto coperto', 'immobiliare' ),
+					'posto auto scoperto' => __( 'posto auto scoperto', 'immobiliare' ),
+					'posto auto condominiale' => __( 'posto auto condominiale', 'immobiliare' ),
+					'facilità di parcheggio' => __( 'facilità di parcheggio', 'immobiliare' ),
+					'posto interno' => __( 'posto interno', 'immobiliare' ),
+					'posto assegnato' => __( 'posto assegnato', 'immobiliare' ),
+					'garage' => __( 'garage', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'piano terra',
-				'placeholder' => __( 'Seleziona il posto auto', 'meta-box' )
+				'placeholder' => __( 'Seleziona il posto auto', 'immobiliare' )
 			),
       
 			array(
 				'type' => 'heading',
-				'name' => __( 'Struttura dell\'immobile', 'meta-box' ),
-				'desc' => __( 'Composizione e stato del palazzo o dell\'immobile', '{$prefix}' ),
+				'name' => __( 'Struttura dell\'immobile', 'immobiliare' ),
+				'desc' => __( 'Composizione e stato del palazzo o dell\'immobile', 'immobiliare' ),
 				'id'   => 'palazzoheading'
 			),
 			array(
-				'name'     => __( 'Piano', 'meta-box' ),
+				'name'     => __( 'Piano', 'immobiliare' ),
 				'id'       => "{$prefix}piano",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'su due livelli' => __( 'su due livelli', 'meta-box' ),
-					'su più livelli' => __( 'su più livelli', 'meta-box' ),
-					'interrato' => __( 'interrato', 'meta-box' ),
-					'semi interrato' => __( 'semi interrato', 'meta-box' ),
-					'piano terra' => __( 'piano terra', 'meta-box' ),
-					'piano rialzato' => __( 'piano rialzato', 'meta-box' ),
-					'1' => __( '1', 'meta-box' ),
-					'2' => __( '2', 'meta-box' ),
-					'3' => __( '3', 'meta-box' ),
-					'4' => __( '4', 'meta-box' ),
-					'5' => __( '5', 'meta-box' ),
-					'6' => __( '6', 'meta-box' ),
-					'7' => __( '7', 'meta-box' ),
-					'8' => __( '8', 'meta-box' ),
-					'9' => __( '9', 'meta-box' ),
-					'10' => __( '10', 'meta-box' ),
-					'piano alto' => __( 'piano alto', 'meta-box' ),
-					'ultimo' => __( 'ultimo', 'meta-box' ),
+					'su due livelli' => __( 'su due livelli', 'immobiliare' ),
+					'su più livelli' => __( 'su più livelli', 'immobiliare' ),
+					'interrato' => __( 'interrato', 'immobiliare' ),
+					'semi interrato' => __( 'semi interrato', 'immobiliare' ),
+					'piano terra' => __( 'piano terra', 'immobiliare' ),
+					'piano rialzato' => __( 'piano rialzato', 'immobiliare' ),
+					'1' => __( '1', 'immobiliare' ),
+					'2' => __( '2', 'immobiliare' ),
+					'3' => __( '3', 'immobiliare' ),
+					'4' => __( '4', 'immobiliare' ),
+					'5' => __( '5', 'immobiliare' ),
+					'6' => __( '6', 'immobiliare' ),
+					'7' => __( '7', 'immobiliare' ),
+					'8' => __( '8', 'immobiliare' ),
+					'9' => __( '9', 'immobiliare' ),
+					'10' => __( '10', 'immobiliare' ),
+					'piano alto' => __( 'piano alto', 'immobiliare' ),
+					'ultimo' => __( 'ultimo', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'piano terra',
-				'placeholder' => __( 'Seleziona il piano', 'meta-box' )
+				'placeholder' => __( 'Seleziona il piano', 'immobiliare' )
 			),
 			array(
 				
-				'name'  => __( 'Numero piani', 'meta-box' ),
+				'name'  => __( 'Numero piani', 'immobiliare' ),
 				'id'    => "{$prefix}numeropiani",
 				'type'  => 'number',
 				'std'  => 1,
@@ -494,101 +494,101 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => 1
 			),
 			array(
-				'name'     => __( 'Stato', 'meta-box' ),
+				'name'     => __( 'Stato', 'immobiliare' ),
 				'id'       => "{$prefix}stato",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'nuovo' => __( 'nuovo', 'meta-box' ),
-					'in costruzione' => __( 'in costruzione', 'meta-box' ),
-					'ristrutturato' => __( 'ristrutturato', 'meta-box' ),
-					'ottimo' => __( 'ottimo', 'meta-box' ),
-					'buono' => __( 'buono', 'meta-box' ),
-					'discreto' => __( 'discreto', 'meta-box' ),
-					'sufficiente' => __( 'sufficiente', 'meta-box' ),
-					'da sistemare' => __( 'da sistemare', 'meta-box' ),
-					'da ristrutturare' => __( 'da ristrutturare', 'meta-box' ),
-					'abitabile' => __( 'abitabile', 'meta-box' ),
-					'occupato' => __( 'occupato', 'meta-box' ),
-					'edificabile' => __( 'edificabile', 'meta-box' ),
-					'al grezzo' => __( 'al grezzo', 'meta-box' ),
-					'in ristrutturazione' => __( 'in ristrutturazione', 'meta-box' ),
-					'da completare' => __( 'da completare', 'meta-box' ),
-					'rifiniture di lusso' => __( 'rifiniture di lusso', 'meta-box' ),
-					'affittato' => __( 'affittato', 'meta-box' ),
-					'altro' => __( 'altro', 'meta-box' ),
+					'nuovo' => __( 'nuovo', 'immobiliare' ),
+					'in costruzione' => __( 'in costruzione', 'immobiliare' ),
+					'ristrutturato' => __( 'ristrutturato', 'immobiliare' ),
+					'ottimo' => __( 'ottimo', 'immobiliare' ),
+					'buono' => __( 'buono', 'immobiliare' ),
+					'discreto' => __( 'discreto', 'immobiliare' ),
+					'sufficiente' => __( 'sufficiente', 'immobiliare' ),
+					'da sistemare' => __( 'da sistemare', 'immobiliare' ),
+					'da ristrutturare' => __( 'da ristrutturare', 'immobiliare' ),
+					'abitabile' => __( 'abitabile', 'immobiliare' ),
+					'occupato' => __( 'occupato', 'immobiliare' ),
+					'edificabile' => __( 'edificabile', 'immobiliare' ),
+					'al grezzo' => __( 'al grezzo', 'immobiliare' ),
+					'in ristrutturazione' => __( 'in ristrutturazione', 'immobiliare' ),
+					'da completare' => __( 'da completare', 'immobiliare' ),
+					'rifiniture di lusso' => __( 'rifiniture di lusso', 'immobiliare' ),
+					'affittato' => __( 'affittato', 'immobiliare' ),
+					'altro' => __( 'altro', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'usato',
-				'placeholder' => __( 'Seleziona lo stato', 'meta-box' )
+				'placeholder' => __( 'Seleziona lo stato', 'immobiliare' )
 			),
       
 			array(
-				'name'     => __( 'Occupazione', 'meta-box' ),
+				'name'     => __( 'Occupazione', 'immobiliare' ),
 				'id'       => "{$prefix}Occupazione",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'libero' => __( 'libero', 'meta-box' ),
-					'occupato' => __( 'occupato', 'meta-box' ),
-					'affittato' => __( 'affittato', 'meta-box' ),
-					'altro' => __( 'altro', 'meta-box' ),
+					'libero' => __( 'libero', 'immobiliare' ),
+					'occupato' => __( 'occupato', 'immobiliare' ),
+					'affittato' => __( 'affittato', 'immobiliare' ),
+					'altro' => __( 'altro', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'libero',
-				'placeholder' => __( 'Seleziona occupazione', 'meta-box' )
+				'placeholder' => __( 'Seleziona occupazione', 'immobiliare' )
 			),
       
 			array(
-				'name'     => __( 'Riscaldamento', 'meta-box' ),
+				'name'     => __( 'Riscaldamento', 'immobiliare' ),
 				'id'       => "{$prefix}riscaldamento",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'autonomo' => __( 'autonomo', 'meta-box' ),
-					'autonomo a pavimento' => __( 'autonomo a pavimento', 'meta-box' ),
-					'centralizzato' => __( 'centralizzato', 'meta-box' ),
-					'centralizzato con contacalorie' => __( 'centralizzato con contacalorie', 'meta-box' ),
-					'assente' => __( 'assente', 'meta-box' ),
-					'pompa di calore' => __( 'pompa di calore', 'meta-box' ),
+					'autonomo' => __( 'autonomo', 'immobiliare' ),
+					'autonomo a pavimento' => __( 'autonomo a pavimento', 'immobiliare' ),
+					'centralizzato' => __( 'centralizzato', 'immobiliare' ),
+					'centralizzato con contacalorie' => __( 'centralizzato con contacalorie', 'immobiliare' ),
+					'assente' => __( 'assente', 'immobiliare' ),
+					'pompa di calore' => __( 'pompa di calore', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'autonomo',
-				'placeholder' => __( 'Seleziona il riscaldamento', 'meta-box' )
+				'placeholder' => __( 'Seleziona il riscaldamento', 'immobiliare' )
 			),
 			array(
-				'name'     => __( 'Tipo di riscaldamento', 'meta-box' ),
+				'name'     => __( 'Tipo di riscaldamento', 'immobiliare' ),
 				'id'       => "{$prefix}tiporiscaldamento",
 				'type'     => 'select',
 				// Array of 'value' => 'Label' pairs for select box
 				'options'  => array(
-					'metano' => __( 'metano', 'meta-box' ),
-					'gasolio' => __( 'gasolio', 'meta-box' ),
-					'gpl' => __( 'gpl', 'meta-box' ),
-					'legna' => __( 'legna', 'meta-box' ),
-					'misto' => __( 'misto', 'meta-box' ),
-					'elettrico' => __( 'elettrico', 'meta-box' ),
-					'pompadicalore' => __( 'pompa di calore', 'meta-box' ),
+					'metano' => __( 'metano', 'immobiliare' ),
+					'gasolio' => __( 'gasolio', 'immobiliare' ),
+					'gpl' => __( 'gpl', 'immobiliare' ),
+					'legna' => __( 'legna', 'immobiliare' ),
+					'misto' => __( 'misto', 'immobiliare' ),
+					'elettrico' => __( 'elettrico', 'immobiliare' ),
+					'pompadicalore' => __( 'pompa di calore', 'immobiliare' ),
 				),
 				// Select multiple values, optional. Default is false.
 				'multiple'    => false,
 				'std'         => 'metano',
-				'placeholder' => __( 'Seleziona il tipo di riscaldamento', 'meta-box' )
+				'placeholder' => __( 'Seleziona il tipo di riscaldamento', 'immobiliare' )
 			),
 			
 			array(
 				
-				'name'  => __( 'APE', 'meta-box' ),
+				'name'  => __( 'APE', 'immobiliare' ),
 				'id'    => "{$prefix}ape",
 				'type'  => 'text',
 				'clone' => false
 			),
 			array(
 				
-				'name'  => __( 'Anno di costruzione', 'meta-box' ),
+				'name'  => __( 'Anno di costruzione', 'immobiliare' ),
 				'id'    => "{$prefix}anno",
 				'type'  => 'number',
 				'clone' => false,
@@ -596,70 +596,70 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Gallery', 'meta-box' ),
-				'desc' => __( 'Selezione multipla della galleria delle foto dell\'immobile', '{$prefix}' ),
+				'name' => __( 'Gallery', 'immobiliare' ),
+				'desc' => __( 'Selezione multipla della galleria delle foto dell\'immobile', 'immobiliare' ),
 				'id'   => 'galleryheading'
 			),
 			array(
-				'name'             => __( 'Galleria immagini', 'meta-box' ),
+				'name'             => __( 'Galleria immagini', 'immobiliare' ),
 				'id'               => "{$prefix}galleria",
 				'type'             => 'image_advanced'
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Allegati (solo PDF)', 'meta-box' ),
-				'desc' => __( 'Allegati quali planimetrie, capitolati,  progetti, certificazioni e altro', '{$prefix}' ),
+				'name' => __( 'Allegati (solo PDF)', 'immobiliare' ),
+				'desc' => __( 'Allegati quali planimetrie, capitolati,  progetti, certificazioni e altro', 'immobiliare' ),
 				'id'   => 'allegatiheading'
 			),
 			array(
-				'name'             => __( 'File PDF da allegare', 'meta-box' ),
+				'name'             => __( 'File PDF da allegare', 'immobiliare' ),
 				'id'               => "{$prefix}allegati",
 				'type'             => 'file_advanced',
 				'max_file_uploads' => 5
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Planimetria', 'meta-box' ),
-				'desc' => __( 'Allega le foto delle planimetrie', '{$prefix}' ),
+				'name' => __( 'Planimetria', 'immobiliare' ),
+				'desc' => __( 'Allega le foto delle planimetrie', 'immobiliare' ),
 				'id'   => 'planimetriaheading'
 			),
 			array(
-				'name' => __( 'Planimetria', 'meta-box' ),
+				'name' => __( 'Planimetria', 'immobiliare' ),
 				'id'   => "{$prefix}planimetria",
 				'type' => 'image_advanced'
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Video e Virtual Tour', 'meta-box' ),
-				'desc' => __( 'Seleziona il video dopo averlo caricato su YouTube e specifica il Virtual Tour completo di link', '{$prefix}' ),
+				'name' => __( 'Video e Virtual Tour', 'immobiliare' ),
+				'desc' => __( 'Seleziona il video dopo averlo caricato su YouTube e specifica il Virtual Tour completo di link', 'immobiliare' ),
 				'id'   => 'videoheading',
 			),
 			array(
-				'name'  => __( 'Video YouTube', 'meta-box' ),
+				'name'  => __( 'Video YouTube', 'immobiliare' ),
 				'id'    => "{$prefix}video",
 				'type'  => 'oembed',
 				'size'  => 100,
 				'desc'  => 'Video YouTube'
 			),
 			array(
-				'name'  => __( 'Link Virtual Tour', 'meta-box' ),
+				'name'  => __( 'Link Virtual Tour', 'immobiliare' ),
 				'id'    => "{$prefix}virtualtour",
 				'type' => 'text',
 			),
 			array(
 				'type' => 'heading',
-				'name' => __( 'Mappa', 'meta-box' ),
-				'desc' => __( 'Mappa ed ubicazione dell\'immobile', '{$prefix}' ),
+				'name' => __( 'Mappa', 'immobiliare' ),
+				'desc' => __( 'Mappa ed ubicazione dell\'immobile', 'immobiliare' ),
 				'id'   => 'mappaheading',
 			),
 			array(
 				'id' => "{$prefix}address",
-				'name' => __( 'Indirizzo', 'meta-box' ),
+				'name' => __( 'Indirizzo', 'immobiliare' ),
 				'type' => 'text',
 			),
 			array(
 				
-				'name'  => __( 'Zona', 'meta-box' ),
+				'name'  => __( 'Zona', 'immobiliare' ),
 				'id'    => "{$prefix}zona",
 				'type'  => 'text',
 				'clone' => false,
@@ -667,12 +667,22 @@ function immobili_register_meta_boxes( $meta_boxes ) {
 				'step' => 1,
 			),
 			array(
-				'name' => __( 'Geolocalizzazione', 'meta-box' ),
-				'id'    => "{$prefix}loc",
-				'style' => 'width: 500px; height: 500px',
-				'type'  => $tipomappa,
-				'api_key'       => get_option('immobiliare_google_api_key'),
-				'address_field' => "{$prefix}address" 
+				'name'          => __( 'Geolocalizzazione', 'immobiliare' ),
+				'id'            => "{$prefix}loc",
+				'style'         => 'width: 100%; height: 450px;',
+				'type'          => $tipomappa,
+				'api_key'       => $google_api_key,
+				'address_field' => "{$prefix}address",
+				'language'      => 'it',
+				'region'        => 'IT',
+				'std'           => '44.494887,11.342616,15',
+				'js_options'    => array(
+					'mapTypeId'         => 'HYBRID',
+					'zoomControl'       => true,
+					'streetViewControl' => true,
+					'mapTypeControl'    => true,
+					'fullscreenControl' => true,
+				),
 			),
 		)
 	);
