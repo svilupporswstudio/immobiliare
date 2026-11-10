@@ -1,0 +1,21 @@
+name: Deploy su WordPress.org Plugin Directory
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout del codice
+      uses: actions/checkout@v4
+
+    - name: Sincronizzazione con WordPress.org (SVN)
+      uses: 10up/action-wordpress-plugin-deploy@stable
+      env:
+        SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+        SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+        # Se il nome dello "slug" su WordPress.org è diverso dal nome del repository GitHub, 
+        # scommenta la riga sotto e inserisci lo slug esatto (es. mio-plugin-fantastico)
+        # SLUG: il-tuo-slug-su-wordpress
