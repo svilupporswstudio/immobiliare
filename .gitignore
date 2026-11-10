@@ -1,0 +1,22 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Archives
+*.zip
+*.tar.gz
+
+# Temporary / Log files
+*.log
+tmp/
+temp/
+
+# Node / Build artifacts
+node_modules/
+dist/
