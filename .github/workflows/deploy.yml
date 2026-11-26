@@ -19,3 +19,6 @@ jobs:
         # Se il nome dello "slug" su WordPress.org è diverso dal nome del repository GitHub, 
         # scommenta la riga sotto e inserisci lo slug esatto (es. mio-plugin-fantastico)
         SLUG: immobiliare
+        # Nota: non impostare BUILD_DIR se i file del plugin sono nella root del repository,
+        # altrimenti l'azione ignora .distignore/.svnignore e cerca una sottocartella dedicata.
+        # BUILD_DIR: immobiliare

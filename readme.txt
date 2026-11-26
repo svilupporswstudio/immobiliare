@@ -6,7 +6,7 @@ Requires at least: 7.1
 Tested up to: 7.1
 Requires PHP: 8.3
 Requires Plugins: meta-box
-Stable tag: 7.2
+Stable tag: 7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,10 @@ A partire da WordPress 6.5, il plugin sfrutta la funzionalità nativa "Plugin De
 2. screenshot-2.jpg
 
 == Changelog ==
+
+= 7.3.0 =
+* Aggiunti i file `.svnignore` e `.distignore` nella root del plugin per escludere dal deploy su WordPress.org SVN file non necessari (`.env`, `node_modules/`, `.DS_Store`, cartelle temporanee e di build, configurazioni Git/CI e `README.md`).
+* Ottimizzato il workflow GitHub Actions `.github/workflows/deploy.yml` per il rilascio automatico su WordPress.org.
 
 = 7.2.0 =
 * Aggiunta colonna con l'anteprima dell'immagine in evidenza (Foto) come prima colonna nell'elenco immobili in bacheca WordPress (admin), con link diretto alla modifica e badge di fallback.

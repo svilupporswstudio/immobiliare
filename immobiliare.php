@@ -3,7 +3,7 @@
  * Plugin Name: Immobiliare
  * Plugin URI: https://www.matteotestoni.it/servizi/programmatore-esperto-wordpress/plugin-immobiliare-wordpress/
  * Description: Gestionale immobiliare per WordPress. Gestisci i tuoi immobili in modo semplice e veloce.
- * Version: 7.2.0
+ * Version: 7.3.0
  * Author: Matteo Testoni
  * Author URI: https://www.matteotestoni.it
  * License: GPL2
@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'Immobiliare_Version', '7.2.0' );
+define( 'Immobiliare_Version', '7.3.0' );
 define( 'Immobiliare_Directory', dirname( plugin_basename( __FILE__ ) ) );
 define( 'Immobiliare_Path', plugin_dir_path( __FILE__ ) );
 define( 'Immobiliare_URL', plugin_dir_url( __FILE__ ) );

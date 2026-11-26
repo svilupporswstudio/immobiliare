@@ -1,0 +1,48 @@
+# File di ambiente e configurazione locale
+.env
+.env.*
+.env.example
+.editorconfig
+
+# Controllo versione e workflow CI/CD
+.git/
+.gitignore
+.gitattributes
+.github/
+.svnignore
+.distignore
+
+# Dipendenze e tool di build
+node_modules/
+vendor/
+package.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+composer.json
+composer.lock
+
+# Cartelle temporanee e di build
+build/
+dist/
+tmp/
+temp/
+.cache/
+.vscode/
+.idea/
+
+# File generati dal sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Log, archivi e documentazione specifica per GitHub
+*.log
+*.zip
+*.tar.gz
+README.md

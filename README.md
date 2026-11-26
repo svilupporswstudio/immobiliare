@@ -1,4 +1,4 @@
-# Plugin Immobiliare per WordPress (v7.2.0)
+# Plugin Immobiliare per WordPress (v7.3.0)
 
 [![WordPress Tested Up To](https://img.shields.io/badge/WordPress-7.1%2B-blue.svg)](https://wordpress.org/plugins/immobiliare/)
 [![PHP Version](https://img.shields.io/badge/PHP-8.3%2B-777bb4.svg)](https://www.php.net)
@@ -50,14 +50,18 @@ git clone https://github.com/svilupporswstudio/immobiliare.git
 
 ---
 
-## 🛠️ Novità della Versione 7.2.0
+## 🛠️ Novità della Versione 7.3.0
 
+- 📦 **Esclusioni SVN & WordPress.org (`.svnignore` / `.distignore`)**: Aggiunti nella root del repository per escludere automaticamente file di ambiente (`.env`), dipendenze (`node_modules/`), file di sistema (`.DS_Store`, `Thumbs.db`), cartelle temporanee/build (`dist/`, `build/`, `tmp/`) e configurazioni Git/CI durante la sincronizzazione con WordPress.org.
+- ⚙️ **Workflow CI/CD Ottimizzato**: Rifinito `.github/workflows/deploy.yml` per garantire il deploy pulito tramite `10up/action-wordpress-plugin-deploy` al momento della pubblicazione di ogni Release su GitHub.
+
+## 🛠️ Versioni Precedenti
+
+### Novità della Versione 7.2.0
 - 🖼️ **Colonna Immagine in Evidenza nell'Admin**: Aggiunta la colonna con miniatura dell'immobile come prima colonna visibile nell'elenco admin di WordPress (`manage_immobili_posts_columns`), con badge di fallback "No foto" e link rapido alla schermata di modifica.
 - 🌍 **Internazionalizzazione 100% Conforme**: Tutte le stringhe di traduzione sono state uniformate con il text domain `'immobiliare'`, garantendo piena compatibilità con WordPress.org Polyglots e file `.po`/`.mo`.
 - 🛡️ **Protezione Accesso Diretto ai File**: Aggiunta la clausola di sicurezza `defined( 'ABSPATH' ) || exit;` su tutti i file PHP del plugin e creati file sentinella `index.php` ("Silence is golden") nella radice e in ogni sottocartella (`css/`, `img/`, `lang/`).
 - 🗺️ **Mappe Google di Ultima Generazione**: Aggiornate le opzioni JavaScript (`gestureHandling: 'cooperative'`, controlli moderni, altezza ottimizzata) e implementato caricamento asincrono (`async defer`) oltre a un fallback automatico OpenStreetMap nel frontend.
-
-## 🛠️ Versioni Precedenti
 
 ### Novità della Versione 7.1.0
 - ⚡ **Plugin Dependencies Nativo (WP 6.5+)**: Aggiunta la direttiva `Requires Plugins: meta-box`. Rimossa definitivamente la libreria TGMPA (`class-tgm-plugin-activation.php`) e i controlli manuali (-101 KB di codice legacy rimosso).
